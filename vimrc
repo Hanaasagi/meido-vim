@@ -74,8 +74,12 @@ Plugin 'scrooloose/nerdtree'
 nmap <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
-" don;t show these file types
+" don't show these file types
 let NERDTreeIgnore = ['__pycahce__', '\.pyc$', '\.pyo$']
+" when open vim with no files, show nerdtree
+autocmd vimenter * if !argc() | NERDTree | endif
+" autoclose nerdtree when there are no files
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ------------status line------------
 Plugin 'vim-airline/vim-airline'
@@ -87,7 +91,7 @@ Plugin 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 " autofocus on tagbar open
 let g:tagbar_autofocus = 1
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+" autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 
 " ===========================================================================
@@ -96,6 +100,9 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 let mapleader = ','
 let g:mapleader = ','
+
+" enable ruler
+set ruler
 
 " no backuup
 set nobackup
@@ -106,11 +113,25 @@ set noswapfile
 " disable mouse
 set mouse-=a
 
-" disable arrow key
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+" keep 3 lines when cursor move to top or bottom
+set scrolloff=3
+
+" space instead of tab
+set expandtab
+
+" 4 width tab
+set tabstop=4
+
+" use relativenumber in normal mode
+set relativenumber number
+au FocusLost * :set norelativenumber number
+au FocusGained * :set relativenumber
+" use absolutenuber in insert mode
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber
+
+" auto goto last modify location
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " http://stackoverflow.com/questions/13194428/is-better-way-to-zoom-windows-in-vim-than-zoomwin
 " Zoom / Restore window.
@@ -189,8 +210,21 @@ set splitright
 "   				Custom KeyMapping
 " ============================================================================
 
+" disable arrow key
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+" cancel highlight
+noremap <silent><leader>/ :nohls<CR>
 " convenient way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+" Thanks for http://feihu.me/blog/2014/vim-write-read-only-file/
+cmap w!! w !sudo tee > /dev/null %
