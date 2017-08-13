@@ -1,0 +1,9 @@
+language: generic
+
+sudo: true 
+
+before_install:
+  - sudo apt-get install -y vim git python
+
+install:
+  - bash install.sh
