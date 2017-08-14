@@ -8,8 +8,12 @@
 " ============================================================================
 
 
+let mapleader = ','
+let g:mapleader = ','
+
+
 " ============================================================================
-"				Vunble Settings
+"				                Vunble Settings
 " ============================================================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -57,7 +61,7 @@ filetype plugin indent on    " required
 Plugin 'gmarik/vundle'
 
 " ============================================================================
-"   				Plugin Install
+"   				            Plugin Install
 " ============================================================================
 
 " ------------colorschemes------------
@@ -70,7 +74,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 
 " ------------nerdtree------------
 Plugin 'scrooloose/nerdtree'
-" toggle nerdtree display                                                       
+" toggle nerdtree display
 nmap <F3> :NERDTreeToggle<CR>
 " open nerdtree with the current file selected
 nmap ,t :NERDTreeFind<CR>
@@ -93,13 +97,45 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
 
+" ------------YouCompleteMe------------
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_key_list_select_completion=['<C-j>']
+let g:ycm_key_list_previous_completion=['<C-k>']
+let g:ycm_key_list_stop_completion = ['<CR>']
+let g:ycm_complete_in_comments=1
+let g:ycm_complete_in_strings=1
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_seed_identifiers_with_syntax=1
+
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_goto_buffer_command = 'horizontal-split'
+let g:ycm_register_as_syntastic_checker = 0
+
+" ------------others------------
+" auto-completion for quotes, parens, brackets
+Plugin 'Raimondi/delimitMate'
+
+" quick comment
+Plugin 'scrooloose/nerdcommenter'
+
+" quick run
+Plugin 'thinca/vim-quickrun'
+
+"
+set hidden
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+
+" enhance css color
+Plugin 'lilydjwg/colorizer'
+
+" fix trailing whitespace
+Plugin 'bronson/vim-trailing-whitespace'
+map <leader><space> :FixWhitespace<cr>
 
 " ===========================================================================
-" 				Basic Settings
+" 				                Basic Settings
 " ===========================================================================
-
-let mapleader = ','
-let g:mapleader = ','
 
 " enable ruler
 set ruler
@@ -121,6 +157,9 @@ set expandtab
 
 " 4 width tab
 set tabstop=4
+
+" shift width
+set shiftwidth=4
 
 " use relativenumber in normal mode
 set relativenumber number
@@ -151,7 +190,7 @@ nnoremap <silent> <Leader>z :ZoomToggle<CR>
 
 
 " ============================================================================
-"   				Display Settings
+"   				            Display Settings
 " ============================================================================
 
 " show line number
@@ -186,7 +225,7 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-" colorscheme suirenka 
+" colorscheme suirenka
 " colorscheme molokai
 
 " highlight custom keyword
@@ -199,7 +238,7 @@ if has("autocmd")
 endif
 
 " ============================================================================
-"   				Window Settings
+"   				            Window Settings
 " ============================================================================
 
 " open new split window to the right and bottom
@@ -208,7 +247,7 @@ set splitright
 
 
 " ============================================================================
-"   				Custom KeyMapping
+"   				            Custom KeyMapping
 " ============================================================================
 
 " disable arrow key
@@ -225,7 +264,17 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 " Thanks for http://feihu.me/blog/2014/vim-write-read-only-file/
 cmap w!! w !sudo tee > /dev/null %
+
+" quick close
+nnoremap <leader>q :q<CR>
+
+" quick save
+nnoremap <leader>w :w<CR>
+
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
