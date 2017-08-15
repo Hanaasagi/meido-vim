@@ -10,12 +10,7 @@ vim +PluginInstall +qall
 
 cd $HOME/.vim/bundle/YouCompleteMe/
 
-if [ `which clang` ]   # check system clang
-then
-    python install.py --clang-completer --system-libclang   # use system clang
-else
-    python install.py --clang-completer
-fi
+python3 install.py --clang-completer --system-libclang   # use system clang
 
 sed -i "s/\" colorscheme suirenka/colorscheme suirenka/g" ${CURDIR}/vimrc
 

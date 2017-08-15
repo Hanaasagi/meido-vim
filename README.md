@@ -3,3 +3,16 @@
 ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/License-MIT-blue.svg)
 ----
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
+
+#### Requirements
+
+```
+sudo apt-get install build-essential cmake libclang-dev \
+python-dev python3-dev
+```
+
+#### Install
+
+```
+./install.sh
+```

@@ -133,6 +133,14 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
 
+" syntax checking hacks for vim
+Plugin 'scrooloose/syntastic'
+
+" for ruby
+Plugin 'vim-ruby/vim-ruby'
+
+" for rust
+Plugin 'rust-lang/rust.vim'
 " ===========================================================================
 " 				                Basic Settings
 " ===========================================================================
@@ -247,6 +255,18 @@ set splitright
 
 
 " ============================================================================
+"   				            Syntax enhanced
+" ============================================================================
+
+augroup python
+    autocmd!
+    autocmd FileType python
+                \   syn keyword pythonSelf self
+                \ | highlight def link pythonSelf Special
+augroup end
+
+
+" ============================================================================
 "   				            Custom KeyMapping
 " ============================================================================
 
@@ -278,3 +298,5 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+
