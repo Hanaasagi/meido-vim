@@ -10,8 +10,8 @@ vim +PluginInstall +qall
 
 cd $HOME/.vim/bundle/YouCompleteMe/
 
-# python3 install.py --clang-completer --system-libclang   # use system clang
+python3 install.py --clang-completer --system-libclang   # use system clang
 
-sed -i "s/\" colorscheme suirenka/colorscheme suirenka/g" ${CURDIR}/vimrc
+sed -i "s/^\" colorscheme suirenka/colorscheme suirenka/g" ${CURDIR}/vimrc
 
 echo "Install Successed"
