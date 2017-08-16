@@ -16,3 +16,7 @@ python-dev python3-dev
 ```
 ./install.sh
 ```
+
+#### How to use
+
+see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
