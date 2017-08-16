@@ -123,6 +123,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'thinca/vim-quickrun'
 
 "
+Plugin 'tpope/vim-surround'
+
+"
+Plugin 'sjl/gundo.vim'
+nnoremap <leader>u :GundoToggle<CR>
+
+"
 set hidden
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 
@@ -135,6 +142,12 @@ map <leader><space> :FixWhitespace<cr>
 
 " syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
+
+"
+Plugin 'yggdroot/indentline'
+let g:indentLine_char='¦'
+" let g:indentLine_bgcolor_term = 101
+let g:indentLine_color_term=173
 
 " for ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -233,7 +246,7 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-" colorscheme suirenka
+colorscheme suirenka
 " colorscheme molokai
 
 " highlight custom keyword
@@ -298,5 +311,3 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-
-
