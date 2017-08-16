@@ -246,7 +246,7 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-" " colorscheme suirenka
+" colorscheme suirenka
 " colorscheme molokai
 
 " highlight custom keyword
