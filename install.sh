@@ -5,6 +5,7 @@ CURDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # symbolic link
 ln -sf ${CURDIR}/vimrc $HOME/.vimrc
+ln -sf ${CURDIR}/syntax $HOME/.vim/syntax
 # install plugin
 vim +PluginInstall +qall
 
