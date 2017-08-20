@@ -4,6 +4,7 @@
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
 " Last Modify: 2017-08-12
+" use za to show fold code !!!
 
 " ============================================================================
 
@@ -15,6 +16,7 @@ let g:mapleader = ','
 " ============================================================================
 "				                Vunble Settings
 " ============================================================================
+" {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -59,11 +61,12 @@ filetype plugin indent on    " required
 
 " let Vundle manage Plugins
 Plugin 'gmarik/vundle'
+" }}}
 
 " ============================================================================
 "   				            Plugin Install
 " ============================================================================
-
+" {{{
 " ------------colorschemes------------
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
@@ -136,6 +139,9 @@ Plugin 'vim-ctrlspace/vim-ctrlspace'
 " enhance css color
 Plugin 'lilydjwg/colorizer'
 
+" marks
+Plugin 'kshenoy/vim-signature'
+
 " fix trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
@@ -154,10 +160,12 @@ Plugin 'vim-ruby/vim-ruby'
 
 " for rust
 Plugin 'rust-lang/rust.vim'
-" ===========================================================================
-" 				                Basic Settings
-" ===========================================================================
 
+" }}}
+" ============================================================================
+" 				                Basic Settings
+" ============================================================================
+" {{{
 " enable ruler
 set ruler
 
@@ -209,11 +217,18 @@ endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <Leader>z :ZoomToggle<CR>
 
+" fold vimrc
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" }}}
 
 " ============================================================================
 "   				            Display Settings
 " ============================================================================
-
+" {{{
 " show line number
 set number
 " close number
@@ -257,31 +272,35 @@ if has("autocmd")
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 endif
+" }}}
 
 " ============================================================================
 "   				            Window Settings
 " ============================================================================
-
+" {{{
 " open new split window to the right and bottom
 set splitbelow
 set splitright
+" }}}
 
 
 " ============================================================================
 "   				            Syntax enhanced
 " ============================================================================
-
+" {{{
 augroup python
     autocmd!
     autocmd FileType python
                 \   syn keyword pythonSelf self
                 \ | highlight def link pythonSelf Special
 augroup end
+" }}}
 
 
 " ============================================================================
 "   				            Custom KeyMapping
 " ============================================================================
+" {{{
 
 " disable arrow key
 map <Left> <Nop>
@@ -311,3 +330,11 @@ cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+nnoremap - ddp
+nnoremap _ ddkP
+
+" }}}
+
+
+
