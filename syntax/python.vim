@@ -1,3 +1,9 @@
+syntax match pythonOperator "\v\."
+syntax match pythonOperator "\v\,"
+syntax match pythonOperator "\v\+"
+syntax match pythonOperator "\v-"
+syntax match pythonOperator "\v\*"
+syntax match pythonOperator "\v/"
 syntax match pythonOperator "\v\="
 syntax match pythonOperator "\v\*\="
 syntax match pythonOperator "\v/\="
@@ -15,7 +21,5 @@ syntax match pythonOperator "\v\^\="
 syntax match pythonOperator "\v\>\>\="
 syntax match pythonOperator "\v\<\<\="
 syntax match pythonOperator "\v\*\*\="
-syntax match pythonOperator "\v\."
 
-highlight link pythonOperator SpecialChar
-
+highlight link pythonOperator Operator

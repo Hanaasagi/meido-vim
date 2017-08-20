@@ -4,7 +4,7 @@
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
 " Last Modify: 2017-08-12
-" use za to show fold code !!!
+" use za or zR to show fold code !!!
 
 " ============================================================================
 
@@ -72,6 +72,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'Hanaasagi/suirenka'
 
+" ------------powerline------------
+Plugin 'powerline/powerline'
+let g:Powerline_symbols= 'unicode'
+
 " --------rainbow parentheses--------
 Plugin 'kien/rainbow_parentheses.vim'
 
@@ -79,8 +83,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdtree'
 " toggle nerdtree display
 nmap <F3> :NERDTreeToggle<CR>
-" open nerdtree with the current file selected
-nmap ,t :NERDTreeFind<CR>
 " don't show these file types
 let NERDTreeIgnore = ['__pycahce__', '\.pyc$', '\.pyo$']
 " when open vim with no files, show nerdtree
@@ -91,11 +93,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ------------status line------------
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled = 1
 
 " ------------tag bar------------
 Plugin 'majutsushi/tagbar'
 " a class outline viewer
-nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 " autofocus on tagbar open
 let g:tagbar_autofocus = 1
 " autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -115,6 +119,16 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_goto_buffer_command = 'horizontal-split'
 let g:ycm_register_as_syntastic_checker = 0
 
+" ------------quick run------------
+Plugin 'thinca/vim-quickrun'
+
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter" : "quickfix",
+\   },
+\}
+
+
 " ------------others------------
 " auto-completion for quotes, parens, brackets
 Plugin 'Raimondi/delimitMate'
@@ -122,8 +136,8 @@ Plugin 'Raimondi/delimitMate'
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
 
-" quick run
-Plugin 'thinca/vim-quickrun'
+"
+Plugin 'grep.vim'
 
 "
 Plugin 'tpope/vim-surround'
@@ -162,12 +176,17 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'
 
 " }}}
+
 " ============================================================================
 " 				                Basic Settings
 " ============================================================================
 " {{{
 " enable ruler
 set ruler
+
+set encoding=utf8
+
+set laststatus=2
 
 " no backuup
 set nobackup
@@ -189,6 +208,18 @@ set tabstop=4
 
 " shift width
 set shiftwidth=4
+
+" backspace delete 4 spaces
+set softtabstop=4
+
+" fold code
+set foldenable
+set foldmethod=indent
+set foldlevel=99
+
+" regex search very magic mode
+nnoremap / /\v
+vnoremap / /\v
 
 " use relativenumber in normal mode
 set relativenumber number
@@ -220,7 +251,7 @@ nnoremap <silent> <Leader>z :ZoomToggle<CR>
 " fold vimrc
 augroup filetype_vim
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldmethod=marker | :normal zM
 augroup END
 
 " }}}
@@ -283,7 +314,6 @@ set splitbelow
 set splitright
 " }}}
 
-
 " ============================================================================
 "   				            Syntax enhanced
 " ============================================================================
@@ -296,6 +326,15 @@ augroup python
 augroup end
 " }}}
 
+" ============================================================================
+"   				            FileType Settings
+" ============================================================================
+" {{{
+
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+
+" }}}
 
 " ============================================================================
 "   				            Custom KeyMapping
@@ -326,6 +365,9 @@ nnoremap <leader>q :q<CR>
 " quick save
 nnoremap <leader>w :w<CR>
 
+" quick close quickfix
+nnoremap <leader>e :ccl<CR>
+
 cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
@@ -334,7 +376,29 @@ cnoremap <C-e> <End>
 nnoremap - ddp
 nnoremap _ ddkP
 
+" new tab
+nnoremap <leader>tn  :tabnew<CR>
+
+" tab switch
+map <leader>th :tabfirst<CR>
+map <leader>tl :tablast<CR>
+
+map <leader>tj :tabnext<CR>
+map <leader>tk :tabprev<CR>
+
+map <leader>te :tabedit<CR>
+map <leader>td :tabclose<CR>
+map <leader>tm :tabm<CR>
+
+" jump to specific tab
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<CR>
 " }}}
-
-
-
