@@ -136,6 +136,9 @@ Plugin 'Raimondi/delimitMate'
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
 
+" flake8
+Plugin 'nvie/vim-flake8'
+
 "
 Plugin 'grep.vim'
 
@@ -216,6 +219,9 @@ set softtabstop=4
 set foldenable
 set foldmethod=indent
 set foldlevel=99
+
+set wildmenu
+set wildmode=longest,list,full
 
 " regex search very magic mode
 nnoremap / /\v
@@ -331,7 +337,7 @@ augroup end
 " ============================================================================
 " {{{
 
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab colorcolumn=80 ai
 autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 
 " }}}
@@ -346,6 +352,10 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+" disable Page Up/Down
+map <PageUp> <Nop>
+map <PageDown> <Nop>
 
 " cancel highlight
 noremap <silent><leader>/ :nohls<CR>
