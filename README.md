@@ -31,3 +31,37 @@ sudo apt-get install build-essential cmake libclang-dev \
 #### How to use
 
 see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
+
+#### Plugin inside
+
+```Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup'
+Plugin 'gmarik/vundle'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'Hanaasagi/suirenka'
+Plugin 'powerline/powerline'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'thinca/vim-quickrun'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'grep.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plugin 'lilydjwg/colorizer'
+Plugin 'kshenoy/vim-signature'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'scrooloose/syntastic'
+Plugin 'yggdroot/indentline'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'rust-lang/rust.vim'
+Plugin 'nvie/vim-flake8'
+```
