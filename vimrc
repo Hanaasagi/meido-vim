@@ -136,9 +136,6 @@ Plugin 'Raimondi/delimitMate'
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
 
-" flake8
-Plugin 'nvie/vim-flake8'
-
 "
 Plugin 'grep.vim'
 
@@ -172,11 +169,16 @@ let g:indentLine_char='¦'
 " let g:indentLine_bgcolor_term = 101
 let g:indentLine_color_term=173
 
-" for ruby
+" ------------language plugins------------
+
+" Plugin 'leafgarland/typescript-vim'
+
 Plugin 'vim-ruby/vim-ruby'
 
-" for rust
 Plugin 'rust-lang/rust.vim'
+
+" flake8
+Plugin 'nvie/vim-flake8'
 
 " }}}
 
@@ -298,7 +300,7 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-" colorscheme suirenka
+colorscheme suirenka
 " colorscheme molokai
 
 " highlight custom keyword
