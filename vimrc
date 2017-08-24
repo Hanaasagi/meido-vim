@@ -140,6 +140,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'grep.vim'
 
 "
+Plugin 'blueyed/vim-diminactive'
+
+"
 Plugin 'tpope/vim-surround'
 
 "
@@ -156,6 +159,9 @@ Plugin 'lilydjwg/colorizer'
 " marks
 Plugin 'kshenoy/vim-signature'
 
+"
+Plugin 'terryma/vim-multiple-cursors'
+
 " fix trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
@@ -165,9 +171,11 @@ Plugin 'scrooloose/syntastic'
 
 "
 Plugin 'yggdroot/indentline'
-let g:indentLine_char='¦'
+let g:indentLine_enabled=0
+autocmd FileType python let g:indentLine_enabled=1 |
+                        let g:indentLine_char='¦' |
+                        let g:indentLine_color_term=173
 " let g:indentLine_bgcolor_term = 101
-let g:indentLine_color_term=173
 
 " ------------language plugins------------
 
@@ -192,6 +200,8 @@ set ruler
 set encoding=utf8
 
 set laststatus=2
+
+set nowrap
 
 " no backuup
 set nobackup
@@ -300,8 +310,12 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-colorscheme suirenka
+" colorscheme suirenka
 " colorscheme molokai
+
+highlight LineNr ctermfg=224 ctermbg=0
+
+hi CursorLineNR cterm=bold
 
 " highlight custom keyword
 if has("autocmd")
@@ -392,13 +406,12 @@ nnoremap _ ddkP
 nnoremap <leader>tn  :tabnew<CR>
 
 " tab switch
-map <leader>th :tabfirst<CR>
+map <leader>tf :tabfirst<CR>
 map <leader>tl :tablast<CR>
 
 map <leader>tj :tabnext<CR>
 map <leader>tk :tabprev<CR>
 
-map <leader>te :tabedit<CR>
 map <leader>td :tabclose<CR>
 map <leader>tm :tabm<CR>
 
