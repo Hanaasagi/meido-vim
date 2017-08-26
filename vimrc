@@ -12,7 +12,6 @@
 let mapleader = ','
 let g:mapleader = ','
 
-
 " ============================================================================
 "				                Vunble Settings
 " ============================================================================
@@ -23,41 +22,13 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " let Vundle manage Plugins
 Plugin 'gmarik/vundle'
@@ -119,6 +90,48 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_goto_buffer_command = 'horizontal-split'
 let g:ycm_register_as_syntastic_checker = 0
 
+" ------------Unite.vim------------
+Plugin 'shougo/unite.vim'
+Plugin 'shougo/neomru.vim'
+Plugin 'Shougo/vimproc.vim', {'build' : 'make'}
+
+let g:unite_source_grep_command='ack'
+let g:unite_source_grep_default_opts='-s -H --no-heading --no-color --column'
+let g:unite_source_grep_recursive_opt=''
+
+nnoremap [unite] <Nop>
+nmap ; [unite]
+
+nnoremap <silent> [unite]c :<C-u>Unite -toggle -auto-resize -buffer-name=file file<CR><c-u>
+nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=file_rec file_rec/async:!<CR><c-u>
+nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=recent file_mru<CR>
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/unite<CR>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<CR>
+nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<CR>
+
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'prompt': '>>',
+\   'ignore_case': 1,
+\   'smart_case': 1,
+\   'winheight': 20,
+\   'direction': 'botright',
+\ })
+
+function! s:unite_my_settings()
+    " Overwrite settings.
+
+    imap <buffer> kjj  <plug>(unite_exit)
+    imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+    imap <buffer> <C-j> <Plug>(unite_select_next_line)
+    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+    imap <buffer> '     <Plug>(unite_quick_match_default_action)
+    nmap <buffer> '     <Plug>(unite_quick_match_default_action)
+endfunction
+
+autocmd FileType unite call s:unite_my_settings()
+
 " ------------quick run------------
 Plugin 'thinca/vim-quickrun'
 
@@ -128,6 +141,9 @@ let g:quickrun_config = {
 \   },
 \}
 
+let g:quickrun_no_default_key_mappings = 1
+nmap <Leader><F5> <Plug>(quickrun)
+
 
 " ------------others------------
 " auto-completion for quotes, parens, brackets
@@ -136,18 +152,20 @@ Plugin 'Raimondi/delimitMate'
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
 
-"
-Plugin 'grep.vim'
+" Plugin 'grep.vim'
+" Plugin 'mileszs/ack.vim'
+" nnoremap <Leader>a :Ack<Space>
 
 "
 Plugin 'blueyed/vim-diminactive'
 
 "
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 "
 Plugin 'sjl/gundo.vim'
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap <F8> :GundoToggle<CR>
 
 "
 set hidden
@@ -164,10 +182,10 @@ Plugin 'terryma/vim-multiple-cursors'
 
 " fix trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
-map <leader><space> :FixWhitespace<cr>
+map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
-Plugin 'scrooloose/syntastic'
+Plugin 'sooloose/syntastic'
 
 "
 Plugin 'yggdroot/indentline'
@@ -179,7 +197,7 @@ autocmd FileType python let g:indentLine_enabled=1 |
 
 " ------------language plugins------------
 
-" Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typesCRipt-vim'
 
 Plugin 'vim-ruby/vim-ruby'
 
@@ -202,6 +220,9 @@ set encoding=utf8
 set laststatus=2
 
 set nowrap
+
+" auto set nopaste when leave insert mode
+au InsertLeave * set nopaste
 
 " no backuup
 set nobackup
@@ -227,6 +248,11 @@ set shiftwidth=4
 " backspace delete 4 spaces
 set softtabstop=4
 
+" upcase word in insert mode
+" inoremap <C-l> <ESC>gUiwea
+" reverse word case
+inoremap <C-l> <ESC>g~iwea
+
 " fold code
 set foldenable
 set foldmethod=indent
@@ -236,8 +262,8 @@ set wildmenu
 set wildmode=longest,list,full
 
 " regex search very magic mode
-nnoremap / /\v
-vnoremap / /\v
+nmap <buffer> / /\v
+vmap <buffer> / /\v
 
 " use relativenumber in normal mode
 set relativenumber number
@@ -363,11 +389,11 @@ autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 sof
 " ============================================================================
 " {{{
 
-" disable arrow key
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+"
+map <Left> <C-w>H
+map <Right> <C-w>L
+map <Up> <C-w>K
+map <Down> <C-w>J
 
 " disable Page Up/Down
 map <PageUp> <Nop>
@@ -399,8 +425,8 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-nnoremap - ddp
-nnoremap _ ddkP
+nnoremap - :m .+1<CR>==
+nnoremap _ :m .-2<CR>==
 
 " new tab
 nnoremap <leader>tn  :tabnew<CR>
@@ -412,6 +438,7 @@ map <leader>tl :tablast<CR>
 map <leader>tj :tabnext<CR>
 map <leader>tk :tabprev<CR>
 
+map <leader>te :tabedit<Space>
 map <leader>td :tabclose<CR>
 map <leader>tm :tabm<CR>
 
@@ -426,4 +453,8 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<CR>
+
+
+" close buffer really need?
+noremap <leader>bd :bd<CR>
 " }}}
