@@ -15,4 +15,7 @@ python3 install.py --clang-completer --system-libclang   # use system clang
 
 sed -i "s/^\" colorscheme suirenka/colorscheme suirenka/g" ${CURDIR}/vimrc
 
+cd $HOME/.vim/bundle/vimproc.vim/
+make
+
 echo "Install Successed"

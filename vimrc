@@ -43,10 +43,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'Hanaasagi/suirenka'
 
-" ------------powerline------------
-Plugin 'powerline/powerline'
-let g:Powerline_symbols= 'unicode'
-
 " --------rainbow parentheses--------
 Plugin 'kien/rainbow_parentheses.vim'
 
@@ -93,7 +89,7 @@ let g:ycm_register_as_syntastic_checker = 0
 " ------------Unite.vim------------
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/neomru.vim'
-Plugin 'Shougo/vimproc.vim', {'build' : 'make'}
+Plugin 'Shougo/vimproc.vim'
 
 let g:unite_source_grep_command='ack'
 let g:unite_source_grep_default_opts='-s -H --no-heading --no-color --column'
@@ -110,14 +106,17 @@ nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/unite<CR>
 nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<CR>
 nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<CR>
 
-call unite#custom#profile('default', 'context', {
-\   'start_insert': 1,
-\   'prompt': '>>',
-\   'ignore_case': 1,
-\   'smart_case': 1,
-\   'winheight': 20,
-\   'direction': 'botright',
-\ })
+try
+    call unite#custom#profile('default', 'context', {
+    \   'start_insert': 1,
+    \   'prompt': '>>',
+    \   'ignore_case': 1,
+    \   'smart_case': 1,
+    \   'winheight': 20,
+    \   'direction': 'botright',
+    \ })
+catch
+endtry
 
 function! s:unite_my_settings()
     " Overwrite settings.
@@ -185,7 +184,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
-Plugin 'sooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 "
 Plugin 'yggdroot/indentline'
