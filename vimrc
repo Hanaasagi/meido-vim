@@ -43,9 +43,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'Hanaasagi/suirenka'
 
-" --------rainbow parentheses--------
-Plugin 'kien/rainbow_parentheses.vim'
-
 " ------------nerdtree------------
 Plugin 'scrooloose/nerdtree'
 " toggle nerdtree display
@@ -144,7 +141,9 @@ let g:quickrun_no_default_key_mappings = 1
 nmap <Leader><F5> <Plug>(quickrun)
 
 
-" ------------others------------
+" ------------others----------
+" rainbow parentheses
+Plugin 'kien/rainbow_parentheses.vim'
 " auto-completion for quotes, parens, brackets
 Plugin 'Raimondi/delimitMate'
 
@@ -155,20 +154,21 @@ Plugin 'scrooloose/nerdcommenter'
 " Plugin 'mileszs/ack.vim'
 " nnoremap <Leader>a :Ack<Space>
 
-"
+" Vim plugin to dim inactive windows
 Plugin 'blueyed/vim-diminactive'
 
-"
+" easily delete, change and add such surroundings in pairs
 Plugin 'tpope/vim-surround'
+
+" enhance repeat
 Plugin 'tpope/vim-repeat'
 
-"
+" visualize your Vim undo tree
 Plugin 'sjl/gundo.vim'
 nnoremap <F8> :GundoToggle<CR>
 
-"
-set hidden
-Plugin 'vim-ctrlspace/vim-ctrlspace'
+" set hidden
+" Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 " enhance css color
 Plugin 'lilydjwg/colorizer'
@@ -176,17 +176,17 @@ Plugin 'lilydjwg/colorizer'
 " marks
 Plugin 'kshenoy/vim-signature'
 
-"
+" like sublime multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
-" fix trailing whitespace
+" quick fix trailing whitespace
 Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
 
-"
+" displaying thin vertical lines at each indentation level
 Plugin 'yggdroot/indentline'
 let g:indentLine_enabled=0
 autocmd FileType python let g:indentLine_enabled=1 |
@@ -196,7 +196,7 @@ autocmd FileType python let g:indentLine_enabled=1 |
 
 " ------------language plugins------------
 
-" Plugin 'leafgarland/typesCRipt-vim'
+" Plugin 'leafgarland/typescript-vim'
 
 Plugin 'vim-ruby/vim-ruby'
 
@@ -219,6 +219,8 @@ set encoding=utf8
 set laststatus=2
 
 set nowrap
+
+set hidden
 
 " auto set nopaste when leave insert mode
 au InsertLeave * set nopaste
@@ -335,8 +337,11 @@ set incsearch
 " colorscheme
 set background=dark
 set t_Co=256
-" colorscheme suirenka
+try
+colorscheme suirenka
 " colorscheme molokai
+catch
+endtry
 
 highlight LineNr ctermfg=224 ctermbg=0
 
@@ -388,7 +393,7 @@ autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 sof
 " ============================================================================
 " {{{
 
-"
+" change window position
 map <Left> <C-w>H
 map <Right> <C-w>L
 map <Up> <C-w>K
