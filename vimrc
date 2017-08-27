@@ -1,10 +1,10 @@
 " ============================================================================
 " Author:      Hanaasagi
-" Version:     v0.1a
+" Version:     v2.0a
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
-" Last Modify: 2017-08-22
-" use za or zR to show fold code !!!
+" Last Modify: 2017-08-27
+" use za or zr to show fold code !!!
 
 " ============================================================================
 
