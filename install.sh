@@ -6,6 +6,7 @@ TARGETDIR=$HOME
 TODAY=`date +%Y%m%d`
 echo "Step 1: backup you current vim configuration"
 for i in ${TARGETDIR}/.vim ${TARGETDIR}/.vimrc; do [ -e $i ] && [ ! -L $i ] && mv $i $i.$TODAY; done
+for i in ${TARGETDIR}/.vim ${TARGETDIR}/.vimrc; do [ -L $i ] && unlink $i ; done
 
 echo "Step 2: install vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
