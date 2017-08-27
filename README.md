@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/vim-vimrc-624498.svg)
 ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master)
 ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
-![](https://img.shields.io/badge/release-1.0-F4A466.svg)
+![](https://img.shields.io/badge/release-2.0-F4A466.svg)
 ----
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
 
@@ -25,6 +25,8 @@ sudo apt-get install build-essential cmake libclang-dev \
 #### Install
 
 ```
+git clone https://github.com/Hanaasagi/meido-vim.git
+cd meido-vim/
 ./install.sh
 ```
 
@@ -34,30 +36,31 @@ see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
 
 #### Plugin inside
 
-```Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup'
+```
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'Hanaasagi/suirenka'
-Plugin 'powerline/powerline'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'shougo/unite.vim'
+Plugin 'shougo/neomru.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'thinca/vim-quickrun'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'grep.vim'
+Plugin 'blueyed/vim-diminactive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'sjl/gundo.vim'
-Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'lilydjwg/colorizer'
 Plugin 'kshenoy/vim-signature'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
 Plugin 'yggdroot/indentline'
@@ -65,3 +68,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'
 Plugin 'nvie/vim-flake8'
 ```
+
+#### License
+MIT
