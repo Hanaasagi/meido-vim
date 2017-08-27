@@ -266,14 +266,6 @@ set wildmode=longest,list,full
 nmap <buffer> / /\v
 vmap <buffer> / /\v
 
-" use relativenumber in normal mode
-set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
-" use absolutenuber in insert mode
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
-
 " auto goto last modify location
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -305,8 +297,15 @@ augroup END
 "   				            Display Settings
 " ============================================================================
 " {{{
-" show line number
-set number
+
+" use relativenumber in normal mode
+set relativenumber number
+au FocusLost * :set norelativenumber number
+au FocusGained * :set relativenumber
+" use absolutenuber in insert mode
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber
+
 " close number
 function! HideNumber()
   if(&relativenumber == &number)
