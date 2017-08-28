@@ -348,9 +348,9 @@ hi CursorLineNR cterm=bold
 
 " highlight custom keyword
 if has("autocmd")
-  " Highlight TODO, FIXME, NOTE, etc.
+  " Highlight TODO, NOTE, etc.
   if v:version > 701
-    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|DONE\|XXX\|BUG\|HACK\)')
+    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\|MARK\)')
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 endif
@@ -401,6 +401,10 @@ map <Down> <C-w>J
 " disable Page Up/Down
 map <PageUp> <Nop>
 map <PageDown> <Nop>
+
+" disable backspace/delete
+inoremap <BS> <Nop>
+inoremap <Del> <Nop>
 
 " cancel highlight
 noremap <silent><leader>/ :nohls<CR>
