@@ -93,7 +93,7 @@ let g:unite_source_grep_default_opts='-s -H --no-heading --no-color --column'
 let g:unite_source_grep_recursive_opt=''
 
 nnoremap [unite] <Nop>
-nmap ; [unite]
+nmap <Space> [unite]
 
 nnoremap <silent> [unite]c :<C-u>Unite -toggle -auto-resize -buffer-name=file file<CR><c-u>
 nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=file_rec file_rec/async:!<CR><c-u>
@@ -163,6 +163,12 @@ Plugin 'tpope/vim-surround'
 " enhance repeat
 Plugin 'tpope/vim-repeat'
 
+"
+Plugin 'unblevable/quick-scope'
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T', ';']
+let g:qs_first_occurrence_highlight_color=26
+let g:qs_second_occurrence_highlight_color=22
+
 " visualize your Vim undo tree
 Plugin 'sjl/gundo.vim'
 nnoremap <F8> :GundoToggle<CR>
@@ -185,6 +191,7 @@ map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
+nmap <silent> <F6> :SyntasticToggleMode<CR>
 
 " displaying thin vertical lines at each indentation level
 Plugin 'yggdroot/indentline'
