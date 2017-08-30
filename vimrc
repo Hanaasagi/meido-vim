@@ -146,6 +146,11 @@ nmap <Leader><F5> <Plug>(quickrun)
 Plugin 'kien/rainbow_parentheses.vim'
 " auto-completion for quotes, parens, brackets
 Plugin 'Raimondi/delimitMate'
+let delimitMate_expand_cr = 1
+
+"
+Plugin 'junegunn/vim-easy-align'
+nmap ga <Plug>(EasyAlign)
 
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
@@ -212,6 +217,8 @@ Plugin 'rust-lang/rust.vim'
 " flake8
 Plugin 'nvie/vim-flake8'
 
+Plugin 'Vimjas/vim-python-pep8-indent'
+
 " }}}
 
 " ============================================================================
@@ -228,6 +235,12 @@ set laststatus=2
 set nowrap
 
 set hidden
+
+set smartindent
+set smarttab
+
+set ignorecase
+set smartcase
 
 " auto set nopaste when leave insert mode
 au InsertLeave * set nopaste
@@ -389,7 +402,7 @@ augroup end
 " ============================================================================
 " {{{
 
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab colorcolumn=80 ai
+autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4 expandtab colorcolumn=80 ai
 autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 
 " }}}
