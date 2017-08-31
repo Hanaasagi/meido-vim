@@ -1,9 +1,9 @@
 " ============================================================================
 " Author:      Hanaasagi
-" Version:     v2.0a
+" Version:     v2.1
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
-" Last Modify: 2017-08-27
+" Last Modify: 2017-08-31
 " use za or zr to show fold code !!!
 
 " ============================================================================
@@ -117,7 +117,6 @@ endtry
 
 function! s:unite_my_settings()
     " Overwrite settings.
-
     imap <buffer> kjj  <plug>(unite_exit)
     imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
     imap <buffer> <C-j> <Plug>(unite_select_next_line)
@@ -196,6 +195,7 @@ map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
+let g:syntastic_python_checkers=['flake8']
 nmap <silent> <F6> :SyntasticToggleMode<CR>
 
 " displaying thin vertical lines at each indentation level
@@ -383,6 +383,35 @@ endif
 " open new split window to the right and bottom
 set splitbelow
 set splitright
+
+function! s:TabVSplit2Window() abort
+    let bufnums = tabpagebuflist()
+    hide tabclose
+    topleft vsplit
+    for n in bufnums
+        execute 'sbuffer ' . n
+        wincmd _
+    endfor
+    wincmd t
+    quit
+    wincmd =
+endfunction
+command! TabVSplit2Window call s:TabVSplit2Window()
+
+function! s:TabSplit2Window() abort
+    let bufnums = tabpagebuflist()
+    hide tabclose
+    topleft split
+    for n in bufnums
+        execute 'sbuffer ' . n
+        wincmd _
+    endfor
+    wincmd t
+    quit
+    wincmd =
+endfunction
+command! TabSplit2Window call s:TabSplit2Window()
+
 " }}}
 
 " ============================================================================
@@ -481,6 +510,9 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<CR>
 
+" move tab to window
+nnoremap <silent> <Leader>tv :TabVSplit2Window<CR>
+nnoremap <silent> <Leader>ts :TabSplit2Window<CR>
 
 " close buffer really need?
 noremap <leader>bd :bd<CR>

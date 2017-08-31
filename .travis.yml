@@ -1,9 +1,9 @@
 language: generic
 
-sudo: true 
+sudo: true
 
 before_install:
-  - sudo apt-get install -y vim git python
+  - sudo apt-get install -y vim git python3
 
 install:
-  - bash install.sh
+  - bash meido.sh install
