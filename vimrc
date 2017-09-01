@@ -237,6 +237,7 @@ set nowrap
 set hidden
 
 set smartindent
+
 set smarttab
 
 set ignorecase
@@ -466,6 +467,9 @@ map <C-l> <C-W>l
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 " Thanks for http://feihu.me/blog/2014/vim-write-read-only-file/
 cmap w!! w !sudo tee > /dev/null %
+
+" quick shell
+nnoremap <leader>s :shell<CR>
 
 " quick close
 nnoremap <leader>q :q<CR>
