@@ -93,7 +93,7 @@ let g:unite_source_grep_default_opts='-s -H --no-heading --no-color --column'
 let g:unite_source_grep_recursive_opt=''
 
 nnoremap [unite] <Nop>
-nmap <Space> [unite]
+nmap <leader>f [unite]
 
 nnoremap <silent> [unite]c :<C-u>Unite -toggle -auto-resize -buffer-name=file file<CR><c-u>
 nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=file_rec file_rec/async:!<CR><c-u>
@@ -149,7 +149,8 @@ let delimitMate_expand_cr = 1
 
 "
 Plugin 'junegunn/vim-easy-align'
-nmap ga <Plug>(EasyAlign)
+vmap <leader>a <Plug>(EasyAlign)
+nmap <leader>a <Plug>(EasyAlign)
 
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
@@ -442,7 +443,7 @@ autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 sof
 " ============================================================================
 " {{{
 
-" change window position
+" swap window position
 map <Left> <C-w>H
 map <Right> <C-w>L
 map <Up> <C-w>K
@@ -458,6 +459,7 @@ inoremap <Del> <Nop>
 
 " cancel highlight
 noremap <silent><leader>/ :nohls<CR>
+
 " convenient way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -476,6 +478,7 @@ nnoremap <leader>q :q<CR>
 
 " quick save
 nnoremap <leader>w :w<CR>
+nnoremap <leader>wq :wq<CR>
 
 " quick close quickfix
 nnoremap <leader>e :ccl<CR>
@@ -518,6 +521,5 @@ noremap <leader>0 :tablast<CR>
 nnoremap <silent> <Leader>tv :TabVSplit2Window<CR>
 nnoremap <silent> <Leader>ts :TabSplit2Window<CR>
 
-" close buffer really need?
-noremap <leader>bd :bd<CR>
+noremap <Space> i<Space><Esc>
 " }}}
