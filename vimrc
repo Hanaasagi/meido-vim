@@ -339,7 +339,7 @@ function! HideNumber()
   endif
   set number?
 endfunc
-nnoremap <F4> :call HideNumber()<CR>
+nnoremap <F4> :call HideNumber()<CR><ESC>:IndentLinesToggle<CR>
 
 " highlight syntax
 syntax on
