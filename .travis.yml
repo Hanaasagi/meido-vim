@@ -7,4 +7,3 @@ before_install:
 
 script:
   - bash meido.sh install
-  - vim +q
