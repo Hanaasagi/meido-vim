@@ -11,12 +11,13 @@ a graceful vimrc
 ➜  ~ time vim +q
 vim +q  0.16s user 0.02s system 96% cpu 0.183 total
 ```
+**note: meido vim only tested in Arch Linux and Vim8 environment**
 
-#### Screenshot
+### Screenshot
 
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/screenshot.png)
 
-#### Requirements
+### Requirements
 
 assume you use vim8 and need to install following dependencies
 
@@ -25,7 +26,7 @@ sudo apt-get install build-essential cmake libclang-dev \
                         ctags ack-grep python-dev python3-dev
 ```
 
-#### Install
+### Install
 
 ```
 git clone https://github.com/Hanaasagi/meido-vim.git
@@ -33,24 +34,24 @@ cd meido-vim/
 ./meido.sh install
 ```
 
-#### How to use
+### How to use
 
 see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
 
 
-#### Update
+### Update
 
 ```
 ./medio.sh update
 ```
 
-#### Uninstall
+### Uninstall
 
 ```
 ./meido.sh uninstall
 ```
 
-#### Plugin inside
+### Plugin inside
 
 ```
 Plugin 'VundleVim/Vundle.vim'
@@ -80,7 +81,7 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'kshenoy/vim-signature'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'yggdroot/indentline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'
@@ -88,5 +89,5 @@ Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 ```
 
-#### License
-MIT
+### License
+[MIT](https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE)
