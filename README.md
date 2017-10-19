@@ -1,11 +1,9 @@
-![](https://img.shields.io/badge/vim-vimrc-624498.svg)
-![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master)
-![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
-![](https://img.shields.io/badge/release-2.1-F4A466.svg)
+# meido-vim ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master) ![](https://img.shields.io/badge/release-2.1-F4A466.svg) ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 ----
+
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
 
-a graceful vimrc
+French maid or Japanese meido? 
 
 ```
 ➜  ~ time vim +q

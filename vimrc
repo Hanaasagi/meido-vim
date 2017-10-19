@@ -1,9 +1,9 @@
 " ============================================================================
 " Author:      Hanaasagi
-" Version:     v2.1
+" Version:     v2.2
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
-" Last Modify: 2017-08-31
+" Last Modify: 2017-10-19
 " use za or zr to show fold code !!!
 
 " ============================================================================
