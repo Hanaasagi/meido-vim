@@ -5,5 +5,5 @@ sudo: true
 before_install:
   - sudo apt-get install -y vim git python3
 
-install:
+script:
   - bash meido.sh install
