@@ -228,12 +228,16 @@ map <leader><space> :FixWhitespace<CR>
 " Asynchronous Lint Engine
 Plugin 'w0rp/ale'
 let g:ale_python_flake8_options = '--ignore=E501,E225,E124,E712,E116,E131'
-let g:ale_python_pylint_options = "--disable=C0103,C0111,R0201"
+"let g:ale_python_pylint_options = "--disable=C0103,C0111,R0201"
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '>'
+" pylint make me annoyed, I disable it
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
 nmap <silent> <F6> :ALEToggle<CR>
 
 " displaying thin vertical lines at each indentation level
