@@ -19,18 +19,20 @@ vim +q  0.16s user 0.02s system 96% cpu 0.183 total
 
 assume you use vim8 and need to install following dependencies
 
-```
+```Bash
 sudo apt-get install build-essential cmake libclang-dev \
                         ctags ack-grep python-dev python3-dev
 ```
 
-### Install
+### Minimal Install
 
-```
+```Bash
 git clone https://github.com/Hanaasagi/meido-vim.git
 cd meido-vim/
 ./meido.sh install
 ```
+
+*meido-vim use [YCM](https://github.com/Valloric/YouCompleteMe) for code-completion. Only completing C And Python code by default. If you want more, please read this [section](https://github.com/Valloric/YouCompleteMe#ubuntu-linux-x64) and install manually*
 
 ### How to use
 
@@ -39,13 +41,13 @@ see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
 
 ### Update
 
-```
+```Bash
 ./medio.sh update
 ```
 
 ### Uninstall
 
-```
+```Bash
 ./meido.sh uninstall
 ```
 
