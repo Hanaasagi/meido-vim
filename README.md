@@ -1,4 +1,4 @@
-# meido-vim ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master) ![](https://img.shields.io/badge/release-2.1-F4A466.svg) ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+# meido-vim ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master) ![](https://img.shields.io/badge/release-2.2-F4A466.svg) ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 ----
 
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
@@ -42,7 +42,7 @@ see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
 ### Update
 
 ```Bash
-./medio.sh update
+./meido.sh update
 ```
 
 ### Uninstall
@@ -90,4 +90,4 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 ```
 
 ### License
-[MIT](https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE)
+[MIT LICENSE](https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE)
