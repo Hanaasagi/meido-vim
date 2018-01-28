@@ -221,9 +221,9 @@ Plugin 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<CR>
 
 " syntax checking hacks for vim
-"Plugin 'scrooloose/syntastic'
-"let g:syntastic_python_checkers=['flake8']
-"nmap <silent> <F6> :SyntasticToggleMode<CR>
+" Plugin 'scrooloose/syntastic'
+" let g:syntastic_python_checkers=['flake8']
+" nmap <silent> <F6> :SyntasticToggleMode<CR>
 
 " Asynchronous Lint Engine
 Plugin 'w0rp/ale'
@@ -260,6 +260,10 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'nvie/vim-flake8'
 
 Plugin 'Vimjas/vim-python-pep8-indent'
+
+" git diff https://github.com/airblade/vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+nnoremap <leader>g :GitGutterSignsToggle<CR>
 
 " }}}
 

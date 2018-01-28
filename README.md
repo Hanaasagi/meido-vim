@@ -87,6 +87,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'rust-lang/rust.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'airblade/vim-gitgutter'
 ```
 
 ### License
