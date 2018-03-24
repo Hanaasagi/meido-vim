@@ -316,6 +316,9 @@ set shiftwidth=4
 " backspace delete 4 spaces
 set softtabstop=4
 
+" fix delimitMate error
+set backspace=2
+
 " upcase word in insert mode
 " inoremap <C-l> <ESC>gUiwea
 " reverse word case
