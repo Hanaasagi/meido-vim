@@ -265,6 +265,11 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'airblade/vim-gitgutter'
 nnoremap <leader>g :GitGutterSignsToggle<CR>
 
+" the best Git wrapper
+Plugin 'tpope/vim-fugitive'
+" gitk for Vim
+Plugin 'gregsexton/gitv'
+
 " }}}
 
 " ============================================================================
