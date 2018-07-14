@@ -21,7 +21,8 @@ assume you use vim8 and need to install following dependencies
 
 ```Bash
 sudo apt-get install build-essential cmake libclang-dev \
-                        ctags ack-grep python-dev python3-dev
+                        ctags ack-grep python3-dev \
+                        vim vim-runtime vim-nox
 ```
 
 ### Minimal Install
