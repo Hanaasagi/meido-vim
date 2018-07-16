@@ -197,8 +197,11 @@ Plugin 'tpope/vim-repeat'
 "
 Plugin 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T', ';']
-let g:qs_first_occurrence_highlight_color=26
-let g:qs_second_occurrence_highlight_color=22
+augroup qs_colors
+    autocmd!
+    autocmd ColorScheme * highlight QuickScopePrimary ctermfg=26 cterm=underline
+    autocmd ColorScheme * highlight QuickScopeSecondary ctermfg=155 cterm=underline
+augroup END
 
 " visualize your Vim undo tree
 Plugin 'sjl/gundo.vim'
