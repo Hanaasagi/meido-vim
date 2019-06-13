@@ -70,6 +70,7 @@ let g:tagbar_autofocus = 1
 
 " ------------YouCompleteMe------------
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_key_invoke_completion = '<C-p>'
 let g:ycm_key_list_select_completion=['<C-j>']
 let g:ycm_key_list_previous_completion=['<C-k>']
 let g:ycm_key_list_stop_completion = ['<CR>']
@@ -82,6 +83,12 @@ let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_goto_buffer_command = 'horizontal-split'
 let g:ycm_register_as_syntastic_checker = 0
+
+let g:ycm_semantic_triggers = {
+\   'python': [
+\       're!from\s+\S+\s+import\s'
+\   ]
+\}
 
 " ------------Unite.vim------------
 Plugin 'shougo/unite.vim'
