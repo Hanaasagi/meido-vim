@@ -40,6 +40,7 @@ Plugin 'gmarik/vundle'
 " {{{
 " ------------colorschemes------------
 Plugin 'morhetz/gruvbox'
+Plugin 'Hanaasagi/suirenka'
 
 " ------------nerdtree------------
 Plugin 'scrooloose/nerdtree'
@@ -418,12 +419,26 @@ set hlsearch
 set incsearch
 
 " colorscheme
-set termguicolors
 set background=dark
-try
-  colorscheme gruvbox
-catch
-endtry
+if has("termguicolors")
+  set termguicolors
+  " see https://github.com/vim/vim/issues/993
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  try
+    colorscheme gruvbox
+  catch
+  endtry
+else
+  set t_Co=256
+  try
+    colorscheme suirenka
+  catch
+  endtry
+  let g:airline_theme='luna'
+endif
+
+highlight LineNr ctermfg=224 ctermbg=0
 
 hi CursorLineNR cterm=bold
 
