@@ -3,7 +3,7 @@
 " Version:     v2.2
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
-" Last Modify: 2019-05-23
+" Last Modify: 2019-07-02
 " use za or zr to show fold code !!!
 
 " ============================================================================
@@ -39,9 +39,7 @@ Plugin 'gmarik/vundle'
 " ============================================================================
 " {{{
 " ------------colorschemes------------
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'Hanaasagi/suirenka'
+Plugin 'morhetz/gruvbox'
 
 " ------------nerdtree------------
 Plugin 'scrooloose/nerdtree'
@@ -57,7 +55,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ------------status line------------
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='luna'
 let g:airline#extensions#tabline#enabled = 1
 
 " ------------tag bar------------
@@ -206,8 +203,8 @@ Plugin 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T', ';']
 augroup qs_colors
     autocmd!
-    autocmd ColorScheme * highlight QuickScopePrimary ctermfg=26 cterm=underline
-    autocmd ColorScheme * highlight QuickScopeSecondary ctermfg=155 cterm=underline
+    autocmd ColorScheme * highlight QuickScopePrimary guifg='#5FFFFF' gui=underline ctermfg=26 cterm=underline
+    autocmd ColorScheme * highlight QuickScopeSecondary guifg='#6EF6CC' gui=underline ctermfg=155 cterm=underline
 augroup END
 
 " visualize your Vim undo tree
@@ -421,15 +418,12 @@ set hlsearch
 set incsearch
 
 " colorscheme
+set termguicolors
 set background=dark
-set t_Co=256
 try
-colorscheme suirenka
-" colorscheme molokai
+  colorscheme gruvbox
 catch
 endtry
-
-highlight LineNr ctermfg=224 ctermbg=0
 
 hi CursorLineNR cterm=bold
 
