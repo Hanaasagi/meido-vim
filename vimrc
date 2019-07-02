@@ -429,6 +429,7 @@ if has("termguicolors")
     colorscheme gruvbox
   catch
   endtry
+  let g:airline_theme='qwq'
 else
   set t_Co=256
   try
