@@ -14,7 +14,6 @@ install() {
 
     echo "Step 3: initialize meido vim and install plugin"
     ln -sf ${SOURCEDIR}/vimrc ${TARGETDIR}/.vimrc
-    ln -sf ${SOURCEDIR}/syntax ${TARGETDIR}/.vim/syntax
     vim +PluginInstall +qall
 
     echo "Step 4: install YCM"
