@@ -3,13 +3,7 @@
 
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
 
-French maid or Japanese meido? 
-
-```
-➜  ~ time vim +q
-vim +q  0.16s user 0.02s system 96% cpu 0.183 total
-```
-**note: meido vim only tested in Arch Linux and Vim8 environment**
+French maid or Japanese meido?
 
 ### Screenshot
 
@@ -57,8 +51,7 @@ see [here](https://github.com/Hanaasagi/meido-vim/wiki/meido-vim-guide)
 ```
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
 Plugin 'Hanaasagi/suirenka'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
@@ -89,6 +82,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
 ```
 
 ### License
