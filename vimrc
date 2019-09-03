@@ -235,7 +235,7 @@ map <leader><space> :FixWhitespace<CR>
 
 " Asynchronous Lint Engine
 Plugin 'w0rp/ale'
-let g:ale_python_flake8_options = '--ignore=E501,E225,E124,E712,E116,E131'
+let g:ale_python_flake8_options = '--ignore=E121,E123,E126,E704,W503,W504'
 "let g:ale_python_pylint_options = "--disable=C0103,C0111,R0201"
 " mypy.ini has higher priority
 let g:ale_python_mypy_options = '--ignore-missing-imports'
