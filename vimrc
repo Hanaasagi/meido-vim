@@ -569,6 +569,9 @@ nnoremap _ :m .-2<CR>==
 " new tab
 nnoremap <leader>tn  :tabnew<CR>
 
+" move window to new tab
+nnoremap <leader>tm <C-W>T<CR>
+
 " tab switch
 map <leader>tf :tabfirst<CR>
 map <leader>tl :tablast<CR>
@@ -578,7 +581,6 @@ map <leader>tk :tabprev<CR>
 
 map <leader>te :tabedit<Space>
 map <leader>td :tabclose<CR>
-map <leader>tm :tabm<CR>
 
 " jump to specific tab
 noremap <leader>1 1gt
