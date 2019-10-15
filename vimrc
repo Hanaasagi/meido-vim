@@ -68,6 +68,7 @@ let g:tagbar_autofocus = 1
 
 " ------------YouCompleteMe------------
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_invoke_completion = '<C-p>'
 let g:ycm_key_list_select_completion=['<C-j>']
 let g:ycm_key_list_previous_completion=['<C-k>']
