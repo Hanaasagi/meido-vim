@@ -513,6 +513,7 @@ augroup end
 
 autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4 expandtab colorcolumn=80 ai
 autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType go set tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab textwidth=120 ai
 
 " }}}
 
