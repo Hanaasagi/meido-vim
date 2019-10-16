@@ -521,6 +521,9 @@ autocmd FileType ruby,lua,javascript,html,css,xml set tabstop=2 shiftwidth=2 sof
 " ============================================================================
 " {{{
 
+" copy selected text
+vmap <C-c> "+y
+
 " swap window position
 map <Left> <C-w>H
 map <Right> <C-w>L
