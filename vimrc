@@ -96,8 +96,8 @@ Plugin 'shougo/unite.vim'
 Plugin 'shougo/neomru.vim'
 Plugin 'Shougo/vimproc.vim'
 
-let g:unite_source_grep_command='ack'
-let g:unite_source_grep_default_opts='-s -H --no-heading --no-color --column'
+let g:unite_source_grep_command='rg'
+let g:unite_source_grep_default_opts='--no-heading --vimgrep --smart-case --sortr accessed'
 let g:unite_source_grep_recursive_opt=''
 
 nnoremap [unite] <Nop>
