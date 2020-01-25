@@ -91,49 +91,33 @@ let g:ycm_semantic_triggers = {
 \   ]
 \}
 
-" ------------Unite.vim------------
-Plugin 'shougo/unite.vim'
-Plugin 'shougo/neomru.vim'
-Plugin 'Shougo/vimproc.vim'
+" ------------ LeaderF ------------
+Plugin 'Yggdroot/LeaderF'
+if g:colors_name == 'gruvbox'
+    "let g:Lf_PopupColorscheme = 'gruvbox_material'
+    let g:Lf_PopupColorscheme = 'default'
+endif
 
-let g:unite_source_grep_command='rg'
-let g:unite_source_grep_default_opts='--no-heading --vimgrep --smart-case --sortr accessed'
-let g:unite_source_grep_recursive_opt=''
+nnoremap [leaderf] <Nop>
+nmap <leader>f [leaderf]
 
-nnoremap [unite] <Nop>
-nmap <leader>f [unite]
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_PopupPreviewPosition = "bottom"
+let g:Lf_RgConfig = [
+    \ "--no-heading",
+    \ "--no-hidden",
+    \ "--smart-case",
+    \ "--sortr accessed",
+\ ]
+let g:Lf_PreviewResult = { 'rg': 1 }
 
-nnoremap <silent> [unite]c :<C-u>Unite -toggle -auto-resize -buffer-name=file file<CR><c-u>
-nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=file_rec file_rec/async:!<CR><c-u>
-nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<CR>
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=recent file_mru<CR>
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/unite<CR>
-nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<CR>
-nnoremap <silent> [unite]/ :<C-u>Unite -no-quit -buffer-name=search grep:.<CR>
-
-try
-    call unite#custom#profile('default', 'context', {
-    \   'start_insert': 1,
-    \   'prompt': '>>',
-    \   'ignore_case': 1,
-    \   'smart_case': 1,
-    \   'winheight': 20,
-    \   'direction': 'botright',
-    \ })
-catch
-endtry
-
-function! s:unite_my_settings()
-    " Overwrite settings.
-    imap <buffer> kjj  <plug>(unite_exit)
-    imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-    imap <buffer> <C-j> <Plug>(unite_select_next_line)
-    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-    imap <buffer> '     <Plug>(unite_quick_match_default_action)
-    nmap <buffer> '     <Plug>(unite_quick_match_default_action)
-endfunction
-
-autocmd FileType unite call s:unite_my_settings()
+nnoremap <silent> [leaderf]f :<C-U><C-R>=printf("Leaderf file %s", "")<CR><CR>
+nnoremap <silent> [leaderf]b :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+nnoremap <silent> [leaderf]r :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+nnoremap <silent> [leaderf]s :<C-U>Leaderf rg --current-buffer --regexMode<CR>
+nnoremap <silent> [leaderf]w :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
+nnoremap [leaderf]g :<C-U><C-R>=printf("Leaderf rg -e %s", "")<CR>
 
 " ------------quick run------------
 Plugin 'thinca/vim-quickrun'
