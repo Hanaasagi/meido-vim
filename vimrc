@@ -93,7 +93,7 @@ let g:ycm_semantic_triggers = {
 
 " ------------ LeaderF ------------
 Plugin 'Yggdroot/LeaderF'
-if g:colors_name == 'gruvbox'
+if get(g:, 'colors_name', '') == 'gruvbox'
     "let g:Lf_PopupColorscheme = 'gruvbox_material'
     let g:Lf_PopupColorscheme = 'default'
 endif
