@@ -20,10 +20,6 @@ install() {
     cd ${TARGETDIR}/.vim/bundle/YouCompleteMe/
     python3 install.py --clang-completer --system-libclang   # use system clang
 
-    echo "Step 5: install vimproc"
-    cd ${TARGETDIR}/.vim/bundle/vimproc.vim/
-    make
-
     echo "Install Successed"
 }
 
