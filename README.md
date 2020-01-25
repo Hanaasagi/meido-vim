@@ -81,7 +81,6 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
-Plugin 'gregsexton/gitv'
 Plugin 'Yggdroot/LeaderF'
 ```
 
