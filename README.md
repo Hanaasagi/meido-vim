@@ -58,9 +58,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'shougo/unite.vim'
-Plugin 'shougo/neomru.vim'
-Plugin 'Shougo/vimproc.vim'
 Plugin 'thinca/vim-quickrun'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Raimondi/delimitMate'
@@ -84,6 +81,8 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
+Plugin 'gregsexton/gitv'
+Plugin 'Yggdroot/LeaderF'
 ```
 
 ### License
