@@ -162,8 +162,10 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " auto-completion for quotes, parens, brackets
-Plugin 'Raimondi/delimitMate'
-let delimitMate_expand_cr = 1
+"Plugin 'Raimondi/delimitMate'
+"let delimitMate_expand_cr = 1
+Plugin 'jiangmiao/auto-pairs'
+let g:AutoPairsCenterLine = 0
 
 "
 Plugin 'junegunn/vim-easy-align'
