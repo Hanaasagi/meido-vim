@@ -57,6 +57,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = '%{strftime("%H:%M")}'
 
 " ------------tag bar------------
 Plugin 'majutsushi/tagbar'
