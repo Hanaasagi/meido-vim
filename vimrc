@@ -47,7 +47,7 @@ Plugin 'scrooloose/nerdtree'
 " toggle nerdtree display
 nmap <F3> :NERDTreeToggle<CR>
 " don't show these file types
-let NERDTreeIgnore = ['__pycahce__', '\.pyc$', '\.pyo$']
+let NERDTreeIgnore = ['^__pycache__$', '\.pyc$', '\.pyo$']
 " when open vim with no files, show nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
 " autoclose nerdtree when there are no files
