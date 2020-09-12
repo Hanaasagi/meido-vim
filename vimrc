@@ -432,6 +432,7 @@ else
 endif
 
 highlight LineNr ctermfg=224 ctermbg=0
+highlight Comment cterm=italic gui=italic
 
 hi CursorLineNR cterm=bold
 
