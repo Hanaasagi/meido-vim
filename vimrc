@@ -178,6 +178,16 @@ nmap <leader>a <Plug>(EasyAlign)
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
 
+" Copy from remote
+Plugin 'Hanaasagi/remote-copy.vim'
+vmap <C-c> y:call remote_copy#copy2clipboard(getreg('"'))<cr>
+
+" Change word form
+Plugin 'Hanaasagi/inflection.vim'
+command! Inflection call inflection#inflect_current_word()
+command! -range InflectionVisual call inflection#inflect_visaul_block()
+inoremap <C-l> <ESC>h y:call inflection#inflect_current_word_in_insert_mode()<CR>
+
 " Plugin 'grep.vim'
 " Plugin 'mileszs/ack.vim'
 " nnoremap <Leader>a :Ack<Space>
@@ -271,7 +281,6 @@ nnoremap <leader>g :GitGutterSignsToggle<CR>
 Plugin 'tpope/vim-fugitive'
 " gitk for Vim
 Plugin 'gregsexton/gitv'
-
 " }}}
 
 " ============================================================================
@@ -329,7 +338,8 @@ set backspace=2
 " upcase word in insert mode
 " inoremap <C-l> <ESC>gUiwea
 " reverse word case
-inoremap <C-l> <ESC>g~iwea
+" Update: use the inflection.vim
+" inoremap <C-l> <ESC>g~iwea
 
 " fold code
 set foldenable
