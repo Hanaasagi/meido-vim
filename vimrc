@@ -86,6 +86,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 
+
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>jt :YcmCompleter GetType<CR>
@@ -301,6 +302,8 @@ Plugin 'gregsexton/gitv'
 " enable ruler
 set ruler
 
+set t_ut=
+
 set encoding=utf8
 
 set laststatus=2
@@ -442,7 +445,7 @@ if has("termguicolors")
     colorscheme gruvbox
   catch
   endtry
-  let g:airline_theme='qwq'
+  let g:airline_theme='onedark'
 else
   set t_Co=256
   try
@@ -461,7 +464,7 @@ hi CursorLineNR cterm=bold
 if has("autocmd")
   " Highlight TODO, NOTE, etc.
   if v:version > 701
-    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\|MARK\)')
+    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|DONE\|BUG\|MARK\|TO-BE-REMOVED\)')
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
 endif
