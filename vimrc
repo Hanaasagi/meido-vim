@@ -60,6 +60,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_b = '%{strftime("%H:%M")}'
+let g:airline#extensions#tabline#fnamemod = ':p:.'
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#fnamecollapse = 0
 
 " ------------tag bar------------
 Plugin 'majutsushi/tagbar'
