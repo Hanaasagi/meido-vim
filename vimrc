@@ -186,6 +186,8 @@ nmap <leader>a <Plug>(EasyAlign)
 
 " quick comment
 Plugin 'scrooloose/nerdcommenter'
+" https://github.com/preservim/nerdcommenter/issues/270
+let g:NERDUsePlaceHolders = 0
 
 " Copy from remote
 Plugin 'Hanaasagi/remote-copy.vim'
