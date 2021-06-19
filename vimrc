@@ -1,6 +1,6 @@
 " ============================================================================
 " Author:      Hanaasagi
-" Version:     v2.4.0
+" Version:     v2.4.1
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
 " Last Modify: 2021-06-19
