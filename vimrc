@@ -140,6 +140,9 @@ nmap <Leader><F5> <Plug>(quickrun)
 
 
 " ------------others----------
+"  wakatime
+Plugin 'wakatime/vim-wakatime'
+
 " rainbow parentheses
 Plugin 'kien/rainbow_parentheses.vim'
 " configuration see
