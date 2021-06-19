@@ -41,6 +41,8 @@ Plugin 'gmarik/vundle'
 " ------------colorschemes------------
 Plugin 'morhetz/gruvbox'
 Plugin 'Hanaasagi/suirenka'
+Plugin 'joshdick/onedark.vim'
+
 
 " ------------nerdtree------------
 Plugin 'scrooloose/nerdtree'
