@@ -536,9 +536,6 @@ autocmd FileType go set tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab textwid
 " ============================================================================
 " {{{
 
-" copy selected text
-vmap <C-c> "+y
-
 " swap window position
 map <Left> <C-w>H
 map <Right> <C-w>L
