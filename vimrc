@@ -3,7 +3,7 @@
 " Version:     v2.4.1
 " Email:       ambiguous404@gmail.com
 " Create Time: 2017-08-12
-" Last Modify: 2021-06-19
+" Last Modify: 2021-06-21
 " use za or zr to show fold code !!!
 
 " ============================================================================
@@ -198,7 +198,7 @@ vmap <C-c> y:call remote_copy#copy2clipboard(getreg('"'))<cr>
 Plugin 'Hanaasagi/inflection.vim'
 command! Inflection call inflection#inflect_current_word()
 command! -range InflectionVisual call inflection#inflect_visaul_block()
-inoremap <C-l> <ESC>h y:call inflection#inflect_current_word_in_insert_mode()<CR>
+inoremap <C-l> <ESC>:call inflection#inflect_current_word_in_insert_mode()<CR>
 
 " Plugin 'grep.vim'
 " Plugin 'mileszs/ack.vim'
