@@ -548,7 +548,9 @@ map <PageDown> <Nop>
 
 " disable backspace/delete
 inoremap <BS> <Nop>
+inoremap <Char-0x010> <NOP>
 inoremap <Del> <Nop>
+inoremap <Char-0x07F> <NOP>
 
 " cancel highlight
 noremap <silent><leader>/ :nohls<CR>
