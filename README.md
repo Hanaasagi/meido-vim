@@ -1,4 +1,4 @@
-# meido-vim ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master) ![](https://img.shields.io/badge/release-2.4.0-F4A466.svg) ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+# meido-vim ![](https://travis-ci.org/Hanaasagi/meido-vim.svg?branch=master) ![](https://img.shields.io/badge/release-2.4.2-F4A466.svg) ![https://github.com/Hanaasagi/meido-vim/blob/master/LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 ----
 
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/logo.png)
