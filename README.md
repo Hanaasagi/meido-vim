@@ -7,6 +7,8 @@ French maid or Japanese meido?
 
 ### Screenshot
 
+![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/start.png)
+
 ![](https://github.com/Hanaasagi/meido-vim/blob/master/.resources/screenshot.png)
 
 ### Requirements
@@ -53,16 +55,22 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'morhetz/gruvbox'
 Plugin 'Hanaasagi/suirenka'
+Plugin 'joshdick/onedark.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Yggdroot/LeaderF'
 Plugin 'thinca/vim-quickrun'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'ActivityWatch/aw-watcher-vim'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Hanaasagi/remote-copy.vim'
+Plugin 'Hanaasagi/inflection.vim'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -81,7 +89,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'gregsexton/gitv'
-Plugin 'Yggdroot/LeaderF'
+Plugin 'mhinz/vim-startify'
 ```
 
 ### License
