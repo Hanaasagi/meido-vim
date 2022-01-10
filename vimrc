@@ -11,6 +11,7 @@
 
 let mapleader = ','
 let g:mapleader = ','
+let g:project_dir = '~/Atelier/'
 
 " ============================================================================
 "                               Vunble Settings
@@ -51,7 +52,7 @@ nmap <F3> :NERDTreeToggle<CR>
 " don't show these file types
 let NERDTreeIgnore = ['^__pycache__$', '\.pyc$', '\.pyo$']
 " when open vim with no files, show nerdtree
-autocmd vimenter * if !argc() | NERDTree | endif
+autocmd vimenter * if !argc() | Startify | NERDTree | wincmd w | endif
 " autoclose nerdtree when there are no files
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -293,6 +294,63 @@ nnoremap <leader>g :GitGutterSignsToggle<CR>
 Plugin 'tpope/vim-fugitive'
 " gitk for Vim
 Plugin 'gregsexton/gitv'
+
+" start screen
+Plugin 'mhinz/vim-startify'
+let g:ascii_banner = [
+    \     '⠄⠄⠄⣰⣿⠄⠄⠄⠄⠄⢠⠄⠄⢀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄',
+    \     '⠄⠄⢰⣿⠿⠄⡀⠄⠄⠄⠘⣷⡀⠄⠢⣄⠄⠄⠄⠄⠄⠄⠄⣠⠖⠁⠄⠄⠄⠄',
+    \     '⠄⣤⢸⣿⣿⣆⠣⠄⠄⠄⠄⠸⣿⣦⡀⠙⢶⣦⣄⡀⠄⡠⠞⠁⢀⡴⠄⠄⠄⠄',
+    \     '⢰⣿⣎⣿⣿⣿⣦⣀⠄⠄⠄⠄⠹⣿⣿⣦⢄⡙⠻⠿⠷⠶⠤⢐⣋⣀⠄⠄⠄⠄',
+    \     '⢸⣿⠛⠛⠻⠿⢿⣿⣧⢤⣤⣄⣠⡘⣿⣿⣿⡟⠿⠛⠂⠈⠉⠛⢿⣿⠄⠄⠄⠄',
+    \     '⠄⡇⢰⣿⣇⡀⠄⠄⣝⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⡄⠄⠈⠄⣷⢠⡆⠄⠄⠄⠄',
+    \     '⢹⣿⣼⣿⣯⢁⣤⣄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⣴⠶⣲⣵⠟⠄⠄⠄⠄⠸',
+    \     '⠄⢿⣿⣿⣿⣷⣮⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣟⣡⡴⠄⠄⠄⠄⠁',
+    \     '⠄⠰⣭⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⡀⠄⠄⠄⠄',
+    \     '⠄⠄⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣭⣶⡞⠄⠄⠄⠄⠄',
+    \     '⠄⠄⠐⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄⠄⠄⠄⠄⠄',
+    \     '⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣯⣿⣯⣿⣾⣿⣿⣿⣿⣿⡿⠋⠄⠄⠄⠄⠄⠄⠄',
+    \     '⠄⠄⠄⠄⠄⠄⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣵⠄⠄⠄⠄⠄⠄⠄⠄⠄',
+    \     '⠄⠄⠄⠄⠄⠄⠄⢀⣿⣯⣟⣿⣿⣿⡿⣟⣯⣷⣿⣿⡏⣤⠄⠄⠄⠄⠄⠄⠄⠄',
+    \     '⠄⠄⠄⠄⠄⠄⠄⣞⢸⣿⣿⣿⣾⣷⣿⣿⣿⣿⣿⣿⣇⣿⡆⠄⠄⠄⠄⠄⠄⠄'
+    \]
+let g:startify_custom_header = startify#pad(startify#fortune#boxed() + g:ascii_banner)
+let g:startify_custom_footer = startify#pad([
+    \ 'Copyright: meido-vim by @Hanaasagi'
+    \ ])
+
+let g:startify_files_number = 7
+let g:startify_commands = [
+    \ {'o': ['Open Configuration', 'e ~/.vimrc']},
+    \ {'r': ['Reload Configuration', 'source ~/.vimrc']},
+    \ ]
+
+function! s:startify_list_projects()
+    let l:dirs = systemlist('ls -u -r ' . g:project_dir . ' | head -n 5')
+    return map(l:dirs, '{"line": v:val, "cmd": "NERDTree " . g:project_dir . v:val }')
+endfunction
+
+function! s:startify_list_commits()
+    if !isdirectory(".git")
+        return
+    endif
+
+    let l:git = 'git -C ' . getcwd()
+    let l:commits = systemlist(l:git .' log --oneline | head -n 5')
+    return map(l:commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. 'G show ". matchstr(v:val, "^\\x\\+") }')
+endfunction
+
+let g:startify_lists = [
+      \ { 'type': function('s:startify_list_projects'), 'header': ['   🍣 Projects']       },
+      \ { 'type': 'files',                              'header': ['   🍡 Recently Files'] },
+      \ { 'type': 'dir',                                'header': ['   🍮 '. getcwd()]     },
+      \ { 'type': 'sessions',                           'header': ['   🍥 Sessions']       },
+      "\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': function('s:startify_list_commits'),  'header': ['   🍧 Commits']        },
+      \ { 'type': 'commands',                           'header': ['   🍤']                },
+      "\ { 'header': ['   Commits'],        'type': function('s:list_commits')             },
+      \ ]
+
 " }}}
 
 " ============================================================================
