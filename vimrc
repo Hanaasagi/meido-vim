@@ -55,6 +55,7 @@ let NERDTreeIgnore = ['^__pycache__$', '\.pyc$', '\.pyo$']
 autocmd vimenter * if !argc() | Startify | NERDTree | wincmd w | endif
 " autoclose nerdtree when there are no files
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter NERD_tree_* | execute 'normal R'
 
 " ------------status line------------
 Plugin 'vim-airline/vim-airline'
